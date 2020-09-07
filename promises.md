@@ -38,12 +38,27 @@ can be different than how it appears in the code.
 
 ## Promises are Boxes
 
+### Disclaimer
+
+There are a lot of ways to explain promises and most of them center around a metaphor of some sort.
+I will also use a metaphor, but it's going to be a little less embellished.
+If some other explanation (like the Christmas-presents one in the modules) makes more sense to you, great!
+And if you're still fuzzy about what was in the modules, see if this presentation makes any more sense to you
+(it might not, but keep at it with whatever makes more sense).
+
+
+### What are promises?
+
 Promises are boxes.
+
+
+### Rules of promises
 
 The rules of these boxes are simple:
 - any value can be put inside of a box. But...
 - *once a value is inside a box, we cannot touch it directly anymore*. However...
-- we *can* give the box instructions telling it what to do with the value inside.
+- we *can* give the box a function to apply to the value it contains.
+  - When we do this, we get a *new* box containing the result of applying that function to the value in the original box.
 - A box is either:
   - *pending* (it is waiting for a value), or
   - *settled* (it is done waiting).
@@ -55,14 +70,20 @@ There are a few other rules but that's the gist of it.
 
 You might also hear the term "resolved" which in the modules is used to mean the same as "fulfilled"
 but which is actually a little more complicated. I'm not going to get into the difference here, though.
+I know all the terminology can be confusing (sorry!).
+As long as you can distinguish between *pending*, *fulfilled*, and *rejected* you should be ok though.
 
-(insert picture)
+
+
+### Making a promise
 
 Eventually you might write your own code and functions that return promises instead of "unboxed" values
 (*I* still have never done this),
 but most of the time we just receive promises back when we run functions like `fetch`,
 meaning we don't have to manually construct promises ourselves using the `Promise()` constructor function
 as you saw in the modules.
+(I honestly don't know why they go into that, it's overly complicated for someone who just needs to learn how to *use* promises.
+But I digress.)
 
 
 A key insight here is that we can make a box to store a value even before we know what that value is,
@@ -128,7 +149,7 @@ fetch(url)
   })
 ```
 
-(insert picture)
+(I was going to have a picture for this here but I need to workshop it more first. Ask if you think a visual would help.)
 
 We can chain with `.then` as many times as we need to.
 
@@ -222,7 +243,10 @@ if you're familiar with those.
 
 
 
+## Questions, comments, points of confusion
 
+Please get in touch and I'll be happy to clarify anything,
+either on Slack or by making an appointment.
 
 
 
@@ -245,7 +269,7 @@ if you're familiar with those.
 
 - [Promise objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) on MDN
 - [States and Fates](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)
-
+- [Promise objects](https://tc39.es/ecma262/#sec-promise-objects) in the ECMAScript specification
 
 
 

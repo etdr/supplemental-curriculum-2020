@@ -172,6 +172,10 @@ We can't run the function until we have the result of the process or, in the cas
 
 
 
+## Questions, comments, points of confusion
+
+Please get in touch and I'll be happy to clarify anything,
+either on Slack or by making an appointment.
 
 
 
